@@ -1,0 +1,32 @@
+﻿<Window x:Class="lere333.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lere333"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="251*"/>
+            <ColumnDefinition Width="541*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+            <Button x:Name="BtnAdd" Click="BtnAdd_click">Добавить</Button>
+            <Button x:Name="BtnDelete" Click="BtnDelete_click">Удалить</Button>
+            <Button x:Name="BtnEdit" Click="BtnEdit_click">Изменить</Button>
+        </StackPanel>
+        <DataGrid Grid.Row="1" x:Name="DataGridWarehouse" ColumnWidth="*" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Мебель" Binding="{Binding Мебель}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Заказ" Binding="{Binding Заказ}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding Количество}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
